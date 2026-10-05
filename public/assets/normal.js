@@ -1,0 +1,1 @@
+const DESTINATION_URL='YOUR_TRACKING_URL_HERE';document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{localStorage.setItem('vlabel_cookie_choice',b.dataset.choice);if(DESTINATION_URL!=='YOUR_TRACKING_URL_HERE')location.href=DESTINATION_URL;else document.getElementById('cookieOverlay')?.classList.add('hidden');});

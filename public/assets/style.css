@@ -1,0 +1,83 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#202521;background:#f5f4ef}.top{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 max(6vw,24px);background:#faf9f5;border-bottom:1px solid #deddd7}.brand{font:700 21px Georgia,serif;letter-spacing:.13em;color:#202521;text-decoration:none}.top nav{display:flex;gap:25px}.top nav a{font-size:14px;color:#60655f;text-decoration:none}.hero{padding:90px max(7vw,26px) 72px;max-width:950px}.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:700;color:#777b74}.hero h1{font:500 clamp(46px,7vw,82px)/1 Georgia,serif;margin:17px 0 23px;max-width:800px}.hero p{font-size:18px;line-height:1.7;color:#626761;max-width:670px}.stories{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid #deddd7}.stories article{padding:38px;border-right:1px solid #deddd7;background:#faf9f5}.stories article:last-child{border:0}.stories h2{font:500 26px/1.25 Georgia,serif}.stories p{line-height:1.65;color:#686d67}.about{padding:70px max(7vw,26px);max-width:800px}.about h2{font:500 36px Georgia,serif}.about p{line-height:1.7;color:#666b65}footer{padding:28px max(7vw,26px);border-top:1px solid #deddd7;color:#7a7d78;font-size:13px}.overlay{position:fixed;inset:0;display:grid;place-items:center;padding:20px;background:#15191566;z-index:20}.cookie{position:relative;width:min(92vw,410px);background:#fff;padding:29px 27px 25px;border:1px solid #dedfdc;border-radius:14px;box-shadow:0 20px 60px #00000025;text-align:left}.cookie .mark{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:#28312c;color:#fff;font:600 18px Georgia,serif;margin-bottom:17px}.cookie h2{font:500 26px/1.15 Georgia,serif;margin:0 30px 10px 0}.cookie p{font-size:14px;line-height:1.6;color:#666c67;margin:0}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}.actions button{padding:12px;border-radius:8px;font-weight:700;cursor:pointer}.accept{background:#28312c;color:#fff;border:1px solid #28312c}.decline{background:#f4f4f1;color:#303631;border:1px solid #d9dbd7}.close{position:absolute;right:12px;top:11px;width:31px;height:31px;border:0;background:transparent;color:#737873;font-size:24px;cursor:pointer}.overlay.hidden{display:none}.bgpage{background-position:center;background-size:cover;background-repeat:no-repeat}.bgpage .overlay{background:#171b186f}.bgpage[data-country=PL]{background-image:url('assets/backgrounds/pl.webp')}.bgpage[data-country=DE]{background-image:url('assets/backgrounds/de.webp')}.bgpage[data-country=DK]{background-image:url('assets/backgrounds/dk.webp')}.bgpage[data-country=PT]{background-image:url('assets/backgrounds/pt.webp')}.bgpage[data-country=HU]{background-image:url('assets/backgrounds/hu.webp')}.bgpage[data-country=IT]{background-image:url('assets/backgrounds/it.webp')}.bgpage[data-country=AU]{background-image:url('assets/backgrounds/au.webp')}.bgpage[data-country=NO]{background-image:url('assets/backgrounds/no.webp')}@media(max-width:700px){.top nav{display:none}.stories{grid-template-columns:1fr}.stories article{border-right:0;border-bottom:1px solid #deddd7}.cookie{padding:26px 21px 22px}.actions{grid-template-columns:1fr}.hero{padding-top:65px}}
+
+/* ===== Vlabel professional refinement ===== */
+:root{
+  --ink:#202622;
+  --muted:#69706b;
+  --paper:#fbfaf7;
+  --line:#dedfd9;
+  --accent:#27342d;
+}
+body{background:var(--paper);color:var(--ink)}
+.top{background:rgba(251,250,247,.96);backdrop-filter:blur(10px)}
+.hero h1,.about h2,.stories h2,.cookie h2{letter-spacing:-.02em}
+.stories article{transition:transform .2s ease,background .2s ease}
+.stories article:hover{background:#fff;transform:translateY(-2px)}
+
+.overlay{
+  place-items:center;
+  padding:18px;
+  background:rgba(18,24,21,.52);
+  backdrop-filter:blur(2px);
+}
+.cookie{
+  width:min(91vw,390px);
+  padding:28px 25px 24px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.75);
+  box-shadow:0 24px 75px rgba(0,0,0,.22);
+}
+.cookie .mark{
+  width:44px;height:44px;border-radius:11px;
+  background:var(--accent);
+  box-shadow:0 7px 18px rgba(39,52,45,.16);
+}
+.cookie h2{font-size:25px}
+.cookie p{font-size:13.5px}
+.actions button{min-height:44px;transition:transform .16s ease,opacity .16s ease}
+.actions button:hover{transform:translateY(-1px)}
+.accept{background:var(--accent);border-color:var(--accent)}
+.decline{background:#f4f4f1}
+.close{top:12px;right:12px}
+
+/* ===== Localized background page: DESKTOP ===== */
+.bgpage{
+  min-height:100vh;
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-color:#1c211e;
+}
+.bgpage[data-country="PL"] { background-image: url('backgrounds/pl-desk.webp'); }
+.bgpage[data-country="DE"] { background-image: url('backgrounds/de-desk.webp'); }
+.bgpage[data-country="DK"] { background-image: url('backgrounds/dk-desk.webp'); }
+.bgpage[data-country="PT"] { background-image: url('backgrounds/pt-desk.webp'); }
+.bgpage[data-country="HU"] { background-image: url('backgrounds/hu-desk.webp'); }
+.bgpage[data-country="IT"] { background-image: url('backgrounds/It-desk.webp'); }
+.bgpage[data-country="AU"] { background-image: url('backgrounds/au-desk.webp'); }
+.bgpage[data-country="NO"] { background-image: url('backgrounds/no-desk.webp'); }
+
+/* ===== MOBILE gets separate portrait artwork ===== */
+@media (max-width:768px){
+  .bgpage{
+    background-size:cover;
+    background-position:center top;
+  }
+  .bgpage[data-country="PL"]{background-image:url('backgrounds/pl-mob.webp')}
+  .bgpage[data-country="DE"]{background-image:url('backgrounds/de-mob.webp')}
+  .bgpage[data-country="DK"]{background-image:url('backgrounds/Media.webp')}
+  .bgpage[data-country="PT"]{background-image:url('backgrounds/pt-mob.webp')}
+  .bgpage[data-country="HU"]{background-image:url('backgrounds/hu-mob.webp')}
+  .bgpage[data-country="IT"]{background-image:url('backgrounds/it-mob.webp')}
+  .bgpage[data-country="AU"]{background-image:url('backgrounds/Media.webp')}
+  .bgpage[data-country="NO"]{background-image:url('backgrounds/Media.webp')}
+
+  .overlay{padding:14px}
+  .cookie{
+    width:min(92vw,360px);
+    padding:25px 21px 21px;
+    border-radius:15px;
+  }
+  .cookie h2{font-size:23px}
+  .actions{grid-template-columns:1fr;gap:9px}
+}
