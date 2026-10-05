@@ -59,41 +59,55 @@ async function detect() {
     return MAP[lang] || 'AU';
 }
 
-(async function () {
+(async () => {
 
     const country = await detect();
     const text = COPY[country];
 
-    console.log('Detected country:', country);
+    console.log("Detected country:", country);
 
-    // IMPORTANT FOR BACKGROUND IMAGE
-    document.body.setAttribute('data-country', country);
+    // Background image country
+    document.body.dataset.country = country;
 
-    const titleEl = document.getElementById('title');
-    const messageEl = document.getElementById('message');
-    const acceptEl = document.getElementById('accept');
-    const declineEl = document.getElementById('decline');
+    // Popup content
+    const title = document.getElementById('cookieTitle');
+    const message = document.getElementById('cookieMessage');
+    const accept = document.getElementById('acceptBtn');
+    const decline = document.getElementById('declineBtn');
 
-    if (titleEl) titleEl.textContent = text[0];
-    if (messageEl) messageEl.textContent = text[1];
-    if (acceptEl) acceptEl.textContent = text[2];
-    if (declineEl) declineEl.textContent = text[3];
+    if (title) {
+        title.textContent = text[0];
+    }
+
+    if (message) {
+        message.textContent = text[1];
+    }
+
+    if (accept) {
+        accept.textContent = text[2];
+    }
+
+    if (decline) {
+        decline.textContent = text[3];
+    }
 
     // Buttons
     document.querySelectorAll('[data-choice]').forEach(button => {
 
-        button.addEventListener('click', function () {
-
-            const choice = this.dataset.choice;
+        button.addEventListener('click', () => {
 
             localStorage.setItem(
                 'vlabel_cookie_choice',
-                choice
+                button.dataset.choice
             );
 
-            if (DESTINATION_URL && DESTINATION_URL !== '#') {
+            if (
+                DESTINATION_URL &&
+                DESTINATION_URL !== '#'
+            ) {
                 window.location.href = DESTINATION_URL;
             }
+
         });
 
     });
